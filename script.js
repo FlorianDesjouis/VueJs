@@ -71,3 +71,32 @@ var app7 = new Vue({
 		]
 	}
 })
+
+var data = { a: 1 }
+var ex = document.getElementById('ex')
+var test = new Vue({
+	el: '#ex',
+	data: data
+})
+
+if (test.$data === data){
+	console.log('worked')
+	console.log(ex)
+	console.log(test.$el)
+}
+
+if (test.$el === ex){
+	console.log('worked again')
+	ex.innerHTML = '15555'
+}else{
+	console.log('dafack mates')
+}
+
+var vm = new Vue({
+	data: {
+		a: 1
+	},
+	created: function () {
+		console.log('a is: ' + this.a)
+	}
+})
